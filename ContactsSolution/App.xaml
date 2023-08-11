@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:ContactsSolution"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        
+        <!-- explicit -->
+        <Style TargetType="TextBox" x:Key="BottomMarginTxtBx">
+            <Setter Property="Margin" Value="0,0,0,5"></Setter>
+        </Style>
+
     </Application.Resources>
 </Application>
