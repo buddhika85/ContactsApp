@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace ContactsSolution
 {
@@ -23,6 +10,18 @@ namespace ContactsSolution
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void NewContactBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            NewContactWindow newContactWindow = new();
+
+            // will allow to activate previous window back and forth
+            //newContactWindow.Show();    
+
+            // now NewContactWindow is opened and active,
+            // you cannot activate Main window/previous window until you close NewContactWindow
+            newContactWindow.ShowDialog();
         }
     }
 }

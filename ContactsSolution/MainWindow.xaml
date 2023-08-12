@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactsSolution"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="Contacts - Main" Height="450" Width="800">
+    <StackPanel Margin="10">
+        <Button Content="New Contact" 
+                Click="NewContactBtn_OnClick" />
+    </StackPanel>
 </Window>

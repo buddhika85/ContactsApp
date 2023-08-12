@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 
 namespace ContactsSolution
 {
@@ -15,7 +14,9 @@ namespace ContactsSolution
 
         private void SaveBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            // To Do: save contact
+
+            Close();        // Close this instance of window
         }
     }
 }
