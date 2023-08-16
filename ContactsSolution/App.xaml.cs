@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace ContactsSolution
@@ -13,5 +8,9 @@ namespace ContactsSolution
     /// </summary>
     public partial class App : Application
     {
+        // SqLite Db configurations
+        public const string DbName = "Contacts.db";
+        public static string FolderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        public static string DatabasePath = System.IO.Path.Combine(FolderPath, DbName);
     }
 }
