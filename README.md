@@ -7,7 +7,7 @@ SQLite
 
 used Event-Driven Architecture (non-MVVM).
 
-Applications contain 3 windows and a user control.
+Applications contain 3 windows (.png Images are provided in the main repository) and a user control.
 
 1. Main window - shows all the contacts
 2. New contact window - allows to save a new contact
