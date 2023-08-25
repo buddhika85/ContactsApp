@@ -1,0 +1,27 @@
+﻿<Window x:Class="ContactsSolution.ContactDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContactsSolution"
+        mc:Ignorable="d"
+        Title="New Contact" Height="300" Width="300">
+
+
+
+    <Grid>
+
+        <StackPanel Margin="10">
+
+            <TextBox x:Name="NameTxtBox" Style="{StaticResource BottomMarginTxtBx}" />
+            <TextBox x:Name="EmailTxtBox" Style="{StaticResource BottomMarginTxtBx}" />
+            <TextBox x:Name="PhoneTxtBox" Style="{StaticResource BottomMarginTxtBx}" />
+
+            <Button x:Name="SaveBtn" Content="Update" 
+                    Click="UpdateBtn_OnClick"></Button>
+            <Button x:Name="DeleteBtn" Content="Delete" Background="DarkRed" Foreground="White"
+                    Click="DeleteBtn_OnClick" ></Button>
+        </StackPanel>
+
+    </Grid>
+</Window>

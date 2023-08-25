@@ -1,5 +1,6 @@
 ﻿using ContactsSolution.Classes;
 using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
@@ -44,34 +45,35 @@ namespace ContactsSolution
             using SQLiteConnection connection = new(App.DatabasePath);
             {
                 connection.CreateTable<Contact>();      //if table already exists, it will not do anything (no re creation)
-                _contacts = connection.Table<Contact>().ToList();
+                _contacts = (connection.Table<Contact>().ToList()).OrderBy(x => x.Name).ToList();
             }
-
-
-            if (_contacts != null)
-            {
-                ContactsListView.ItemsSource = _contacts;
-            }
+            ContactsListView.ItemsSource = _contacts;
         }
 
         private void SearchTextBox_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            var text = (sender as TextBox)?.Text;
-            if (string.IsNullOrWhiteSpace(text))
+            var searchText = (sender as TextBox)?.Text;
+            if (string.IsNullOrWhiteSpace(searchText))
             {
                 ContactsListView.ItemsSource = _contacts;
                 return;
             }
-            ContactsListView.ItemsSource = _contacts.Where(x => Filter(x, text)).ToList();
+            //ContactsListView.ItemsSource = _contacts.Where(x => Filter(x, text)).ToList();
+            ContactsListView.ItemsSource = (from contact in _contacts
+                                            where
+                                                contact.Name.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                                                contact.Email.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                                                contact.Phone.Contains(searchText, StringComparison.OrdinalIgnoreCase)
+                                            select contact).ToList();
         }
 
         private bool Filter(Contact? contact, string searchText)
         {
             if (contact == null) return false;
 
-            return !string.IsNullOrWhiteSpace(contact.Name) && contact.Name.Contains(searchText) ||
-                   !string.IsNullOrWhiteSpace(contact.Phone) && contact.Phone.Contains(searchText) ||
-                   !string.IsNullOrWhiteSpace(contact.Email) && contact.Email.Contains(searchText);
+            return !string.IsNullOrWhiteSpace(contact.Name) && contact.Name.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                   !string.IsNullOrWhiteSpace(contact.Phone) && contact.Phone.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+                   !string.IsNullOrWhiteSpace(contact.Email) && contact.Email.Contains(searchText, StringComparison.OrdinalIgnoreCase);
         }
     }
 }
