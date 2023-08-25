@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ContactsSolution"
         xmlns:userControls ="clr-namespace:ContactsSolution.Controls"
         mc:Ignorable="d"
-        Title="Contacts - Main" Height="500" Width="400">
+        Title="Contacts - Main" Height="500" Width="500">
 
     <Grid Margin="5 5 5 5">
         <Grid.RowDefinitions>
@@ -40,6 +40,13 @@
                    x:Name="ContactsListView" Height="320"
                    Margin="0 4 0 4" 
                    SelectionChanged="ContactsListView_OnSelectionChanged">
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" 
+                            Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
 
             <ListView.ItemTemplate>
 

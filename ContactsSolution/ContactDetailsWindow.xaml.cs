@@ -12,6 +12,10 @@ namespace ContactsSolution
         public ContactDetailsWindow(Contact contact)
         {
             InitializeComponent();
+
+            Owner = Application.Current.MainWindow;
+            WindowStartupLocation = WindowStartupLocation.CenterOwner;
+
             _contact = contact;
             PopulateForm();
         }
