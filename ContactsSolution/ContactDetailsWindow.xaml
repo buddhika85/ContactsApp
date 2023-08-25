@@ -29,7 +29,7 @@
 
         <Label Content="Name" Grid.Row="1" Grid.Column="0"></Label>
         <TextBox x:Name="NameTxtBox" Grid.Row="1" Grid.Column="1"
-                 Style="{StaticResource BottomMarginTxtBx}" Text="{Binding _contact}" />
+                 Style="{StaticResource BottomMarginTxtBx}" />
 
         <Label Content="Email" Grid.Row="2" Grid.Column="0"></Label>
         <TextBox x:Name="EmailTxtBox" Grid.Row="2" Grid.Column="1"
