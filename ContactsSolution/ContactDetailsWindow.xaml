@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactsSolution"
         mc:Ignorable="d"
-        Title="New Contact" Height="300" Width="300">
+        Title="Contact Details" Height="300" Width="300">
 
 
 
@@ -13,7 +13,8 @@
 
         <StackPanel Margin="10">
 
-            <TextBox x:Name="NameTxtBox" Style="{StaticResource BottomMarginTxtBx}" />
+            <TextBox x:Name="NameTxtBox" Style="{StaticResource BottomMarginTxtBx}" 
+                     Text="{Binding _contact.Name}"/>
             <TextBox x:Name="EmailTxtBox" Style="{StaticResource BottomMarginTxtBx}" />
             <TextBox x:Name="PhoneTxtBox" Style="{StaticResource BottomMarginTxtBx}" />
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContactsSolution.Classes;
+using System;
 using System.Windows;
 
 namespace ContactsSolution
@@ -8,8 +9,10 @@ namespace ContactsSolution
     /// </summary>
     public partial class ContactDetailsWindow : Window
     {
-        public ContactDetailsWindow()
+        private Contact _contact;
+        public ContactDetailsWindow(Contact contact)
         {
+            _contact = contact;
             InitializeComponent();
         }
 
