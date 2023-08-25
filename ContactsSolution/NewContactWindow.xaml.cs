@@ -1,5 +1,4 @@
 ﻿using ContactsSolution.Classes;
-using SQLite;
 using System.Windows;
 
 namespace ContactsSolution
@@ -24,11 +23,7 @@ namespace ContactsSolution
                 Phone = PhoneTxtBox.Text,
             };
 
-            using (SQLiteConnection connection = new(App.DatabasePath))     // connection is deposed when it leaves the using block
-            {
-                connection.CreateTable<Contact>();      //if table already exists, it will not do anything (no re creation)
-                connection.Insert(contact);
-            }
+            DataAccess.InsertContact(contact);
 
             Close();        // Close this instance of window
         }

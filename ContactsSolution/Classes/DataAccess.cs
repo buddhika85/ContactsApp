@@ -29,6 +29,27 @@ namespace ContactsSolution.Classes
                     select contact).ToList();
         }
 
+        public static void InsertContact(Contact contact)
+        {
+            using SQLiteConnection connection = new(App.DatabasePath);
+            connection.CreateTable<Contact>();
+            connection.Insert(contact);
+        }
+
+        public static void DeleteContact(Contact contact)
+        {
+            using SQLiteConnection connection = new(App.DatabasePath);
+            connection.CreateTable<Contact>();
+            connection.Delete(contact);
+        }
+
+        public static void UpdateContact(Contact contact)
+        {
+            using SQLiteConnection connection = new(App.DatabasePath);
+            connection.CreateTable<Contact>();
+            connection.Update(contact);
+        }
+
         private static bool Filter(Contact? contact, string searchText)
         {
             if (contact == null) return false;
