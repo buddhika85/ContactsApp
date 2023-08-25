@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactsSolution"
         mc:Ignorable="d"
-        Title="New Contact" Height="200" Width="300">
+        Title="New Contact" Height="250" Width="400">
 
-    <Grid>
+    <Grid  Margin="5 5 5 5">
 
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
