@@ -5,9 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactsSolution"
         mc:Ignorable="d"
-        Title="Contacts - Main" Height="450" Width="800">
+        Title="Contacts - Main" Height="450" Width="400">
     <StackPanel Margin="10">
         <Button Content="New Contact" 
                 Click="NewContactBtn_OnClick" />
+
+        <ListView x:Name="ContactsListView" 
+                  Height="210"
+                  Margin="0 5 0 0">
+
+            <ListView.ItemTemplate>     <!-- how single item should look -->
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock FontSize="20" FontWeight="Bold" 
+                                   Text="{Binding Name}"/>
+                        <TextBlock FontSize="15" Foreground="DodgerBlue" 
+                                   Text="{Binding Email}"/>
+                        <TextBlock FontSize="15" FontStyle="Italic" 
+                                   Text="{Binding Phone}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
     </StackPanel>
 </Window>

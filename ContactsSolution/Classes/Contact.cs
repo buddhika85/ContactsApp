@@ -18,5 +18,10 @@ namespace ContactsSolution.Classes
 
         [MaxLength(20)]
         public string Phone { get; set; } = null!;
+
+        public override string ToString()
+        {
+            return $"ID : {Id} Name : {Name} Email : {Email} Phone : {Phone}";
+        }
     }
 }

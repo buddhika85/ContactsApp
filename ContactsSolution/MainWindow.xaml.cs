@@ -1,5 +1,6 @@
 ﻿using ContactsSolution.Classes;
 using SQLite;
+using System.Collections.Generic;
 using System.Windows;
 
 namespace ContactsSolution
@@ -35,9 +36,22 @@ namespace ContactsSolution
 
         private void ReadContacts()
         {
+            List<Contact> contacts;
             using SQLiteConnection connection = new(App.DatabasePath);
-            connection.CreateTable<Contact>();      //if table already exists, it will not do anything (no re creation)
-            var contacts = connection.Table<Contact>().ToList();
+            {
+                connection.CreateTable<Contact>();      //if table already exists, it will not do anything (no re creation)
+                contacts = connection.Table<Contact>().ToList();
+            }
+
+
+            if (contacts != null)
+            {
+                //contacts.ForEach(x =>
+                //{
+                //    ContactsListView.Items.Add(new ListViewItem { Content = x });
+                //});
+                ContactsListView.ItemsSource = contacts;
+            }
         }
     }
 }
