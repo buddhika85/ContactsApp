@@ -5,24 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactsSolution"
         mc:Ignorable="d"
-        Title="Contact Details" Height="300" Width="300">
-
-
+        Title="Contact Details" Height="200" Width="300">
 
     <Grid>
 
-        <StackPanel Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
 
-            <TextBox x:Name="NameTxtBox" Style="{StaticResource BottomMarginTxtBx}" 
-                     Text="{Binding _contact.Name}"/>
-            <TextBox x:Name="EmailTxtBox" Style="{StaticResource BottomMarginTxtBx}" />
-            <TextBox x:Name="PhoneTxtBox" Style="{StaticResource BottomMarginTxtBx}" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
 
-            <Button x:Name="SaveBtn" Content="Update" 
-                    Click="UpdateBtn_OnClick"></Button>
-            <Button x:Name="DeleteBtn" Content="Delete" Background="DarkRed" Foreground="White"
-                    Click="DeleteBtn_OnClick" ></Button>
-        </StackPanel>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Update / Delete Contact" Grid.Row="0" Grid.ColumnSpan="2" 
+                   TextAlignment="Center" FontWeight="Bold" Padding="0 5 0 5"/>
+
+        <Label Content="Name" Grid.Row="1" Grid.Column="0"></Label>
+        <TextBox x:Name="NameTxtBox" Grid.Row="1" Grid.Column="1"
+                 Style="{StaticResource BottomMarginTxtBx}" />
+
+        <Label Content="Email" Grid.Row="2" Grid.Column="0"></Label>
+        <TextBox x:Name="EmailTxtBox" Grid.Row="2" Grid.Column="1"
+                 Style="{StaticResource BottomMarginTxtBx}" />
+
+        <Label Content="Phone" Grid.Row="3" Grid.Column="0"></Label>
+        <TextBox x:Name="PhoneTxtBox" Grid.Row="3" Grid.Column="1"
+                 Style="{StaticResource BottomMarginTxtBx}" />
+
+        <Button x:Name="SaveBtn" Content="Update" Grid.Row="4" Grid.Column="0" Width="100"
+                Click="UpdateBtn_OnClick"></Button>
+        <Button x:Name="DeleteBtn" Content="Delete" Grid.Row="4" Grid.Column="1"
+                Background="DarkRed" Foreground="White" Width="100"
+                Click="DeleteBtn_OnClick"></Button>
+
 
     </Grid>
+
+
+
+    
 </Window>

@@ -54,6 +54,8 @@ namespace ContactsSolution
             if (selected == null)
                 return;
             new ContactDetailsWindow(selected).ShowDialog();
+
+            RefreshListView();
         }
     }
 }

@@ -5,20 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactsSolution"
         mc:Ignorable="d"
-        Title="New Contact" Height="300" Width="300">
-
-    
+        Title="New Contact" Height="200" Width="300">
 
     <Grid>
 
-        <StackPanel Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
 
-            <TextBox x:Name="NameTxtBox" Style="{StaticResource BottomMarginTxtBx}" />
-            <TextBox x:Name="EmailTxtBox" Style="{StaticResource BottomMarginTxtBx}" />
-            <TextBox x:Name="PhoneTxtBox" Style="{StaticResource BottomMarginTxtBx}" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+           
+        </Grid.ColumnDefinitions>
 
-            <Button x:Name="SaveBtn" Content="Save" Click="SaveBtn_OnClick"></Button>
-        </StackPanel>
+        <TextBlock Text="Add New Contact" Grid.Row="0" Grid.ColumnSpan="2" 
+                   TextAlignment="Center" FontWeight="Bold" Padding="0 5 0 5"/>
+
+        <Label Content="Name" Grid.Row="1" Grid.Column="0"></Label>
+        <TextBox x:Name="NameTxtBox" Grid.Row="1" Grid.Column="1"
+                 Style="{StaticResource BottomMarginTxtBx}" />
+
+        <Label Content="Email" Grid.Row="2" Grid.Column="0"></Label>
+        <TextBox x:Name="EmailTxtBox" Grid.Row="2" Grid.Column="1"
+                     Style="{StaticResource BottomMarginTxtBx}" />
+
+        <Label Content="Phone" Grid.Row="3" Grid.Column="0"></Label>
+        <TextBox x:Name="PhoneTxtBox" Grid.Row="3" Grid.Column="1"
+                     Style="{StaticResource BottomMarginTxtBx}" />
+
+        <Button x:Name="SaveBtn" Grid.Row="4" Grid.Column="1"
+                    Content="Save" Click="SaveBtn_OnClick"></Button>
+       
         
     </Grid>
 </Window>

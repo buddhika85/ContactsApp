@@ -5,13 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactsSolution"
         mc:Ignorable="d"
-        Title="Contacts - Main" Height="450" Width="400">
+        Title="Contacts - Main" Height="350" Width="400">
     <StackPanel Margin="10">
         <Button Content="New Contact" 
+                Margin="0 5 0 5" Padding="5" Background="AntiqueWhite"
+                FontWeight="Bold"
                 Click="NewContactBtn_OnClick" />
 
-        <TextBox Margin="0 5 0 5" x:Name="SearchTextBox" 
-                 TextChanged="SearchTextBox_OnTextChanged"></TextBox>
+        <StackPanel Orientation="Horizontal"  Margin="0 5 0 5">
+
+            <Label Content="Search Contact Text : " FontWeight="Bold"/>
+
+           <TextBox x:Name="SearchTextBox" Width="250"
+                    TextChanged="SearchTextBox_OnTextChanged"></TextBox>
+        </StackPanel>
+
 
         <ListView x:Name="ContactsListView" 
                   Height="210"

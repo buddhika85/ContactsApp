@@ -1,5 +1,4 @@
 ﻿using ContactsSolution.Classes;
-using System;
 using System.Windows;
 
 namespace ContactsSolution
@@ -9,7 +8,7 @@ namespace ContactsSolution
     /// </summary>
     public partial class ContactDetailsWindow : Window
     {
-        private Contact _contact;
+        public readonly Contact _contact;
         public ContactDetailsWindow(Contact contact)
         {
             _contact = contact;
@@ -18,12 +17,14 @@ namespace ContactsSolution
 
         private void UpdateBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            DataAccess.UpdateContact(_contact);
+            Close();
         }
 
         private void DeleteBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            DataAccess.DeleteContact(_contact);
+            Close();
         }
     }
 }
