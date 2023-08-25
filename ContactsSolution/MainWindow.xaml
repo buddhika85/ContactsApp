@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactsSolution"
+        xmlns:userControls ="clr-namespace:ContactsSolution.Controls"
         mc:Ignorable="d"
         Title="Contacts - Main" Height="500" Width="400">
 
@@ -44,14 +45,7 @@
 
                 <DataTemplate>
                     <!-- how single item should look -->
-                    <StackPanel>
-                        <TextBlock FontSize="20" FontWeight="Bold" 
-                                   Text="{Binding Name}"/>
-                        <TextBlock FontSize="15" Foreground="DodgerBlue" 
-                                   Text="{Binding Email}"/>
-                        <TextBlock FontSize="15" FontStyle="Italic" 
-                                   Text="{Binding Phone}"/>
-                    </StackPanel>
+                    <userControls:ContactControl Contact="{Binding}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
 
